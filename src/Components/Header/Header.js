@@ -8,8 +8,8 @@ class Header extends Component {
     return (
       <div>
         <header className="header">
-          <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
+          <nav className="navbar navbar-dark bg-dark">
+            <a className="navbar-brand" href="">
               Welcome to Front-end Interview
             </a>
           </nav>
