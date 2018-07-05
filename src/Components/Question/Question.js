@@ -18,7 +18,30 @@ class Question extends Component {
         let questions = data.map((question, index) => {
           return (
             <div key={index}>
-              <p>{question.question}</p>
+              <div className="card-header">{question.question}</div>
+              <form>
+                {question.option.map((option, index) => {
+                  return (
+                    <div className="custom-control custom-radio m-2">
+                      <input
+                        type="radio"
+                        id={"customRadio" + index}
+                        name="customRadio"
+                        className="custom-control-input"
+                      />
+                      <label
+                        className="custom-control-label"
+                        htmlFor={"customRadio" + index}
+                      >
+                        {option}
+                      </label>
+                    </div>
+                  );
+                })}
+                <button type="submit" className="btn btn-dark m-2">
+                  Submit
+                </button>
+              </form>
             </div>
           );
         });
@@ -27,27 +50,7 @@ class Question extends Component {
   }
 
   render() {
-    return (
-      <div className="card w-75 mx-auto">
-        <div className="card-header">{this.state.questions[0]}</div>
-        <form>
-          <div className="custom-control custom-radio m-2">
-            <input
-              type="radio"
-              id="customRadio1"
-              name="customRadio"
-              className="custom-control-input"
-            />
-            <label className="custom-control-label" htmlFor="customRadio1">
-              {}
-            </label>
-          </div>
-          <button type="submit" className="btn btn-dark m-2">
-            Submit
-          </button>
-        </form>
-      </div>
-    );
+    return <div className="card w-75 mx-auto">{this.state.questions[0]}</div>;
   }
 }
 
