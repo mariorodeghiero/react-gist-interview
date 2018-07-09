@@ -19,6 +19,10 @@ class Question extends Component {
           return (
             <div key={index}>
               <div className="card-header">{question.question}</div>
+              <div className="code">
+                <h6>Code:</h6>
+                <script src={question.code} />
+              </div>
               <form>
                 {question.option.map((option, index) => {
                   return (
@@ -50,7 +54,7 @@ class Question extends Component {
   }
 
   render() {
-    return <div className="card w-75 mx-auto">{this.state.questions[0]}</div>;
+    return <div className="card w-75 mx-auto">{this.state.questions[1]}</div>;
   }
 }
 
