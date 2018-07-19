@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RenderGist from "react-render-gist";
 import "./Question.scss";
 
 class Question extends Component {
@@ -21,7 +22,7 @@ class Question extends Component {
               <div className="card-header">{question.question}</div>
               <div className="code">
                 <h6>Code:</h6>
-                <script src={question.code} />
+                <RenderGist gist={question.gistId} />
               </div>
               <form>
                 {question.option.map((option, index) => {

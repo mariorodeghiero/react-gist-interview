@@ -3,7 +3,7 @@
     {
       "id": 1,
       "question": "1 - Question: What is the value of foo?",
-      "code": "var foo = 10 + '20';",
+      "gistId": "var foo = 10 + '20';",
       "category": "JS",
       "option": [10, 20, 30, "1020"],
       "answer": "1020"
@@ -11,8 +11,7 @@
     {
       "id": 2,
       "question": "2 - Question: xxxxxxx",
-      "code":
-        "'https: //gist.github.com/mariorodeghiero/27228a3e81486b3ba7456ea2eead6bf9.js'",
+      "gistId": "27228a3e81486b3ba7456ea2eead6bf9",
       "category": "JS",
       "option": [10111, 20222, 303333, "102033333"],
       "answer": 303333
@@ -20,7 +19,7 @@
     {
       "id": 3,
       "question": "3 - Question: zzzzz",
-      "code": "var foo = 10 + '20';",
+      "gistId": "var foo = 10 + '20';",
       "category": "JS",
       "option": [10111, 20222, "yyyyyyyyyyyy", "xxxxxxxxx"],
       "answer": "yyyyyyyyyyyy"
