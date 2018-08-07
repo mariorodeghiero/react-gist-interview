@@ -5,6 +5,7 @@ import "./index.scss";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Question from "./Components/Question/Question";
+import Timer from "./Components/timer/Timer";
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <div>
         <div className="general">
           <Header />
+          <Timer />
           <Question />
         </div>
         <Footer />
