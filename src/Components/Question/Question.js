@@ -7,10 +7,14 @@ class Question extends Component {
     super(props);
     this.state = {
       questions: [],
-      numberQuestion: 0
+      numberQuestion: 0,
+      selectedOption: "",
+      correctAnswer: [],
+      pontos: 0
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +40,9 @@ class Question extends Component {
                       id={"customRadio" + index}
                       name="customRadio"
                       className="custom-control-input"
+                      value={option}
+                      onChange={this.handleOptionChange}
+                      // defaultChecked
                     />
                     <label
                       className="custom-control-label"
@@ -49,16 +56,34 @@ class Question extends Component {
             </div>
           );
         });
+        let answers = data.map(question => {
+          return question.answer;
+        });
         this.setState({ questions: questions });
+        this.setState({ correctAnswer: answers });
       });
   }
 
   handleClick(e) {
-    let number = +1;
+    console.log("resposta do teste:", this.state.correctAnswer);
+    // if (
+    //   this.state.questions[this.state.numberQuestion].answer ===
+    //   this.state.selectedOption
+    // ) {
+    //   console.log("------------------------------------");
+    //   console.log("sua resposta foi", this.state.pontos);
+    //   console.log("------------------------------------");
+    // }
+    let number = this.state.numberQuestion + 1;
     this.setState({
       numberQuestion: number
     });
     e.preventDefault();
+    console.log("resposta: ", this.state.selectedOption);
+  }
+
+  handleOptionChange(changeEvent) {
+    this.setState({ selectedOption: changeEvent.target.value });
   }
 
   render() {
@@ -75,6 +100,7 @@ class Question extends Component {
           </button>
           {console.log("size: ", this.state.questions.length)}
           {console.log("number: ", this.state.numberQuestion)}
+          {console.log("answer: ", this.state.selectedOption)}
         </form>
       </div>
     );
