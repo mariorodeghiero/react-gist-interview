@@ -10,11 +10,12 @@ class Question extends Component {
       numberQuestion: 0,
       selectedOption: "",
       correctAnswer: [],
-      pontos: 0
+      points: 0
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.CheckPoints = this.CheckPoints.bind(this);
   }
 
   componentDidMount() {
@@ -64,22 +65,25 @@ class Question extends Component {
       });
   }
 
+  CheckPoints() {
+    const answersOfQuestions = this.state.correctAnswer;
+    const answerSelect = this.state.selectedOption;
+    answersOfQuestions.includes(answerSelect)
+      ? this.setState({
+          points: this.state.points + 1
+        })
+      : console.log("Wrong answer");
+  }
+
   handleClick(e) {
-    console.log("resposta do teste:", this.state.correctAnswer);
-    // if (
-    //   this.state.questions[this.state.numberQuestion].answer ===
-    //   this.state.selectedOption
-    // ) {
-    //   console.log("------------------------------------");
-    //   console.log("sua resposta foi", this.state.pontos);
-    //   console.log("------------------------------------");
-    // }
+    this.CheckPoints();
     let number = this.state.numberQuestion + 1;
     this.setState({
       numberQuestion: number
     });
     e.preventDefault();
-    console.log("resposta: ", this.state.selectedOption);
+    console.log("Answers of questions:", this.state.correctAnswer);
+    console.log("Answer selectOption:", this.state.selectedOption);
   }
 
   handleOptionChange(changeEvent) {
@@ -89,18 +93,17 @@ class Question extends Component {
   render() {
     return (
       <div className="card w-75 mx-auto">
-        <form>
+        <form onSubmit={this.handleClick}>
           {this.state.questions[this.state.numberQuestion]}
-          <button
-            type="submit"
-            className="btn btn-dark m-2"
-            onClick={this.handleClick}
-          >
+          <button type="submit" className="btn btn-dark m-2">
             Submit
           </button>
-          {console.log("size: ", this.state.questions.length)}
-          {console.log("number: ", this.state.numberQuestion)}
-          {console.log("answer: ", this.state.selectedOption)}
+          {console.log("-------------------------")}
+          {console.log("Questions size: ", this.state.questions.length)}
+          {console.log("Number of question: ", this.state.numberQuestion)}
+          {console.log("Answer select: ", this.state.selectedOption)}
+          {console.log("Points:", this.state.points)}
+          {console.log("Answers coorect", this.state.correctAnswer)}
         </form>
       </div>
     );
