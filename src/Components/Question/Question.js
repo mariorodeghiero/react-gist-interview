@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RenderGist from "react-render-gist";
 import "./Question.scss";
+import Score from "../score/Score";
 
 class Question extends Component {
   constructor(props) {
@@ -100,7 +101,9 @@ class Question extends Component {
 
   render() {
     if (this.state.finished === true) {
-      return <div>{console.log("-------et-----------------------------")}</div>;
+      return (
+        <Score points={this.state.points} number={this.state.numberQuestion} />
+      );
     } else {
       return (
         <div className="card w-75 mx-auto">
