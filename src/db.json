@@ -5,8 +5,8 @@
       "question": "1 - What is the value of foo?",
       "gistId": "27228a3e81486b3ba7456ea2eead6bf9",
       "category": "JS",
-      "option": [10, 20, 30, "1020"],
-      "answer": "1020"
+      "option": [1020, 20, 30, "\"1020\""],
+      "answer": "\"1020\""
     },
     {
       "id": 2,

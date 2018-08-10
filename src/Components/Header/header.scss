@@ -1,5 +1,11 @@
 .header {
-  width: 100%;
-  height: 80px;
-  margin: 0;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    .navbar {
+        border-bottom: 1px solid #cccccc;
+        .navbar-brand {
+            color: #ffffff;
+        }
+    }
 }

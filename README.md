@@ -3,7 +3,6 @@
 ## Built with
 
 - ReactJS
-- ChartJS
 
 ## Author
 

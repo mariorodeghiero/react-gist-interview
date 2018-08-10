@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
 .timer {
     float: right;
-    padding: 20px 30px;
+    padding: 10px 30px;
     p {
-        letter-spacing: 4px;
+        font-family: "Orbitron", sans-serif;
+        font-size: 1.2rem;
+        span {
+            padding: 3px;
+        }
     }
 }

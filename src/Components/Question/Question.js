@@ -9,8 +9,9 @@ class Question extends Component {
       questions: [],
       numberQuestion: 0,
       selectedOption: "",
-      correctAnswer: [],
-      points: 0
+      correctAnswers: [],
+      points: 0,
+      finished: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -32,28 +33,32 @@ class Question extends Component {
                 <h6>Code:</h6>
                 <RenderGist gist={question.gistId} />
               </div>
-
-              {question.option.map((option, index) => {
-                return (
-                  <div key={index} className="custom-control custom-radio m-2">
-                    <input
-                      type="radio"
-                      id={"customRadio" + index}
-                      name="customRadio"
-                      className="custom-control-input"
-                      value={option}
-                      onChange={this.handleOptionChange}
-                      // defaultChecked
-                    />
-                    <label
-                      className="custom-control-label"
-                      htmlFor={"customRadio" + index}
+              <div className="options">
+                {question.option.map((option, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="custom-control custom-radio m-2"
                     >
-                      {option}
-                    </label>
-                  </div>
-                );
-              })}
+                      <input
+                        type="radio"
+                        id={"customRadio" + index}
+                        name="customRadio"
+                        className="custom-control-input"
+                        value={option}
+                        onChange={this.handleOptionChange}
+                        // defaultChecked
+                      />
+                      <label
+                        className="custom-control-label"
+                        htmlFor={"customRadio" + index}
+                      >
+                        {option}
+                      </label>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           );
         });
@@ -61,18 +66,18 @@ class Question extends Component {
           return question.answer;
         });
         this.setState({ questions: questions });
-        this.setState({ correctAnswer: answers });
+        this.setState({ correctAnswers: answers });
       });
   }
 
   CheckPoints() {
-    const answersOfQuestions = this.state.correctAnswer;
-    const answerSelect = this.state.selectedOption;
-    answersOfQuestions.includes(answerSelect)
-      ? this.setState({
-          points: this.state.points + 1
-        })
-      : console.log("Wrong answer");
+    let answerCorret = this.state.correctAnswers[this.state.numberQuestion];
+    let answerSelect = this.state.selectedOption;
+    if (answerSelect == answerCorret) {
+      this.setState({
+        points: this.state.points + 1
+      });
+    }
   }
 
   handleClick(e) {
@@ -81,9 +86,12 @@ class Question extends Component {
     this.setState({
       numberQuestion: number
     });
+    if (number >= this.state.questions.length) {
+      this.setState({
+        finished: true
+      });
+    }
     e.preventDefault();
-    console.log("Answers of questions:", this.state.correctAnswer);
-    console.log("Answer selectOption:", this.state.selectedOption);
   }
 
   handleOptionChange(changeEvent) {
@@ -91,22 +99,26 @@ class Question extends Component {
   }
 
   render() {
-    return (
-      <div className="card w-75 mx-auto">
-        <form onSubmit={this.handleClick}>
-          {this.state.questions[this.state.numberQuestion]}
-          <button type="submit" className="btn btn-dark m-2">
-            Submit
-          </button>
-          {console.log("-------------------------")}
-          {console.log("Questions size: ", this.state.questions.length)}
-          {console.log("Number of question: ", this.state.numberQuestion)}
-          {console.log("Answer select: ", this.state.selectedOption)}
-          {console.log("Points:", this.state.points)}
-          {console.log("Answers coorect", this.state.correctAnswer)}
-        </form>
-      </div>
-    );
+    if (this.state.finished === true) {
+      return <div>{console.log("-------et-----------------------------")}</div>;
+    } else {
+      return (
+        <div className="card w-75 mx-auto">
+          <form onSubmit={this.handleClick}>
+            {this.state.questions[this.state.numberQuestion]}
+            <button type="submit" className="btn btn-dark m-2">
+              Submit
+            </button>
+            {console.log("-------------------------")}
+            {console.log("Questions size: ", this.state.questions.length)}
+            {console.log("Number of question: ", this.state.numberQuestion)}
+            {console.log("Answer select: ", this.state.selectedOption)}
+            {console.log("Points: ", this.state.points)}
+            {console.log("Answers: ", this.state.correctAnswers)}
+          </form>
+        </div>
+      );
+    }
   }
 }
 

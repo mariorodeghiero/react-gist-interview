@@ -35,8 +35,10 @@ class Timer extends Component {
     return (
       <div className="timer">
         <p>
-          {this.state.hours}:
-          {this.state.minutes}:{this.state.seconds}
+          <span>{this.state.hours}</span>:<span>{this.state.minutes}</span>:<span
+          >
+            {this.state.seconds}
+          </span>
         </p>
       </div>
     );

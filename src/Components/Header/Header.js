@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./header.scss";
-
+import GitHub from "../../github.svg";
 class Header extends Component {
   state = {};
   render() {
@@ -9,8 +9,9 @@ class Header extends Component {
       <div>
         <header className="header">
           <nav className="navbar navbar-dark bg-dark">
+            {/* <img className="github-icon" src={GitHub} alt="" /> */}
             <a className="navbar-brand" href="">
-              Welcome to Front-end Interview
+              GitHubGist Interview
             </a>
           </nav>
         </header>
