@@ -4,8 +4,10 @@ class Footer extends Component {
   state = {};
   render() {
     return (
-      <div className="card-footer ">
-        <p className="text-center">@By Mário Rodeghiero </p>
+      <div>
+        <footer className="bg-white text-muted text-center p-4">
+          @By Mário Rodeghiero
+        </footer>
       </div>
     );
   }

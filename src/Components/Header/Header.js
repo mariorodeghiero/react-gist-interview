@@ -7,8 +7,8 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <header className="header">
-          <nav className="navbar navbar-dark bg-dark">
+        <header className="header ">
+          <nav className="navbar navbar-dark bg-white ">
             {/* <img className="github-icon" src={GitHub} alt="" /> */}
             <a className="navbar-brand" href="">
               GitHubGist Interview

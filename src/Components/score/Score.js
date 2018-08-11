@@ -6,11 +6,13 @@ class Score extends Component {
     return (
       <div className="card w-50 mx-auto">
         <div className="card-header text-center">
-          <h2>SCOREBOARD</h2>
+          <h2 className="text-muted">SCOREBOARD</h2>
         </div>
 
-        <p>Number of questions : {this.props.number}</p>
-        <p>Total points : {this.props.points}</p>
+        <p className="text-muted pl-4 pt-4">
+          Number of questions : {this.props.number}
+        </p>
+        <p className="text-muted pl-4">Total points : {this.props.points}</p>
       </div>
     );
   }

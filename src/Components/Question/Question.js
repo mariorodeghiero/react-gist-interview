@@ -106,10 +106,10 @@ class Question extends Component {
       );
     } else {
       return (
-        <div className="card w-75 mx-auto">
+        <div className="card w-75 mx-auto shadow p-3 mb-5 bg-white rounded">
           <form onSubmit={this.handleClick}>
             {this.state.questions[this.state.numberQuestion]}
-            <button type="submit" className="btn btn-dark m-2">
+            <button type="submit" className="btn m-2 shadow-sm rounded">
               Submit
             </button>
             {console.log("-------------------------")}
