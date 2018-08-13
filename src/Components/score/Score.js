@@ -10,16 +10,15 @@ class Score extends Component {
   render() {
     return (
       <div className="container">
-        <h2 className="title-score text-center text-muted"> Dashboard </h2>
         <div className="row">
           <div className="card w-25 shadow mx-auto">
             <div className="row">
               <div>
                 <img className="icon" src={Info} alt="Warging" />
               </div>
-              <p className="result">{this.props.number}</p>
+              <div className="result">{this.props.number}</div>
             </div>
-            <div className="text-muted text-center">
+            <div className="description text-center">
               <p>Questions</p>
             </div>
           </div>
@@ -28,9 +27,11 @@ class Score extends Component {
               <div>
                 <img className="icon" src={Warning} alt="Warging" />
               </div>
-              <p className="result">{this.props.number}</p>
+              <div className="result">
+                {this.props.number - this.props.points}
+              </div>
             </div>
-            <div className="text-muted text-center">
+            <div className="description text-center">
               <p>Wrong</p>
             </div>
           </div>
@@ -39,9 +40,9 @@ class Score extends Component {
               <div>
                 <img className="icon" src={Trophy} alt="Warging" />
               </div>
-              <p className="result">{this.props.points}</p>
+              <div className="result">{this.props.points}</div>
             </div>
-            <div className="text-muted text-center">
+            <div className="description text-center">
               <p>Sucessful</p>
             </div>
           </div>

@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+
 import "./Footer.scss";
 class Footer extends Component {
   state = {};
   render() {
     return (
       <div>
-        <footer className="bg-white text-muted text-center p-4">
-          ⚖️ MIT License
+        <footer className="bg-white  text-center p-4">
+          <span role="img" aria-label="license symbol">
+            ⚖️
+          </span>MIT License
         </footer>
       </div>
     );

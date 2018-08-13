@@ -1,29 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-%font {
-    font-family: "Roboto";
-    font-weight: 100;
-    line-height: 1.1;
-    letter-spacing: 0.025em;
-}
-
-.title-score {
-    margin-top: 50px;
-    @extend %font;
-    font-size: 1.6rem;
-    text-decoration: underline;
-}
-
-.icon {
+.container {
+  margin-top: 50px;
+  .icon {
     margin-top: 60px;
     margin-left: 60px;
     width: 38px;
     height: 38px;
-}
-
-.result {
-    @extend %font;
+  }
+  .result {
+    font-family: "Open Sans", sans-serif;
     font-size: 2.5rem;
-    color: #b4b3b3;
-    padding-top: 60px;
+    color: #2e2c2c;
+    padding-top: 50px;
     padding-left: 50px;
+  }
+  .description {
+    color: #aaaaaa;
+  }
 }
