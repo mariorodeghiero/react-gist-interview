@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Score.scss";
 
 import Warning from "../../warning.svg";
+import Info from "../../info.svg";
+import Trophy from "../../trophy.svg";
 
 class Score extends Component {
   state = {};
@@ -13,7 +15,7 @@ class Score extends Component {
           <div className="card w-25 shadow mx-auto">
             <div className="row">
               <div>
-                <img className="icon" src={Warning} alt="Warging" />
+                <img className="icon" src={Info} alt="Warging" />
               </div>
               <p className="result">{this.props.number}</p>
             </div>
@@ -35,7 +37,7 @@ class Score extends Component {
           <div className="card w-25 shadow mx-auto">
             <div className="row">
               <div>
-                <img className="icon" src={Warning} alt="Warging" />
+                <img className="icon" src={Trophy} alt="Warging" />
               </div>
               <p className="result">{this.props.points}</p>
             </div>
