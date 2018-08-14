@@ -7,15 +7,25 @@ class Timer extends Component {
     this.state = {
       hours: 0,
       minutes: 0,
-      seconds: 0
+      seconds: 0,
+      isRunning: false
     };
+
+    // this.start = this.start.bind(this);
+    this.stop = this.stop.bind(this);
   }
 
   tick() {
     if (this.state.seconds >= 60) {
-      this.setState({ seconds: 0, minutes: this.state.minutes + 1 });
+      this.setState({
+        seconds: 0,
+        minutes: this.state.minutes + 1
+      });
       if (this.state.minutes >= 60) {
-        this.setState({ minutes: 0, hours: this.state.hours + 1 });
+        this.setState({
+          minutes: 0,
+          hours: this.state.hours + 1
+        });
       }
     }
     this.setState(prevState => ({
@@ -24,22 +34,33 @@ class Timer extends Component {
   }
 
   componentDidMount() {
+    this.setState({ isRunning: true });
     this.interval = setInterval(() => this.tick(), 1000);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
+  stop() {
+    this.setState(
+      {
+        isRunning: false
+      },
+      () => {
+        clearInterval(this.interval);
+      }
+    );
   }
 
   render() {
     return (
       <div className="timer">
-        <p>
+        <p className="numbers">
           <span>{this.state.hours}</span>:<span>{this.state.minutes}</span>:<span
           >
             {this.state.seconds}
           </span>
         </p>
+        <button className="btn" onClick={this.stop}>
+          Stop
+        </button>
       </div>
     );
   }

@@ -11,7 +11,7 @@ class Score extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="card w-25 shadow mx-auto">
+          <div className="card w-25 shadow mx-auto animated fadeIn slower">
             <div className="row">
               <div>
                 <img className="icon" src={Info} alt="Warging" />
@@ -22,7 +22,7 @@ class Score extends Component {
               <p>Questions</p>
             </div>
           </div>
-          <div className="card w-25 shadow mx-auto">
+          <div className="card w-25 shadow mx-auto animated fadeIn slower">
             <div className="row">
               <div>
                 <img className="icon" src={Warning} alt="Warging" />
@@ -35,7 +35,7 @@ class Score extends Component {
               <p>Wrong</p>
             </div>
           </div>
-          <div className="card w-25 shadow mx-auto">
+          <div className="card w-25 shadow mx-auto animated fadeIn slower">
             <div className="row">
               <div>
                 <img className="icon" src={Trophy} alt="Warging" />

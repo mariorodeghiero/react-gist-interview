@@ -1,21 +1,40 @@
 import React, { Component } from "react";
-// import logo from './logo.svg';
-import "./App.scss";
+
 import "./index.scss";
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
-import Question from "./Components/Question/Question";
+import Header from "./Components/header/Header";
+import Footer from "./Components/footer/Footer";
+import Question from "./Components/question/Question";
 import Timer from "./Components/timer/Timer";
+import Home from "./Components/home/Home";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: false
+    };
+    this.changeStatus = this.changeStatus.bind(this);
+  }
+
+  changeStatus() {
+    this.setState({
+      status: true
+    });
+  }
   render() {
     return (
       <div>
-        <div className="general">
-          <Header />
-          <Timer />
-          <Question />
-        </div>
+        <Header />
+        {this.state.status ? (
+          <div>
+            <Timer />
+            <Question />
+          </div>
+        ) : (
+          <a onClick={this.changeStatus}>
+            <Home />
+          </a>
+        )}
         <Footer />
       </div>
     );

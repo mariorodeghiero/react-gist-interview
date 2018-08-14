@@ -106,7 +106,7 @@ class Question extends Component {
       );
     } else {
       return (
-        <div className="card w-75 mx-auto shadow p-3 mb-5 bg-white rounded">
+        <div className="card w-75 mx-auto shadow p-3 mb-5 bg-white rounded animated fadeIn slower">
           <form onSubmit={this.handleClick}>
             {this.state.questions[this.state.numberQuestion]}
             <button type="submit" className="btn m-2 shadow-sm rounded">
