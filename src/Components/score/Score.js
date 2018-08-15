@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Score.scss";
 
 import Warning from "../../images/warning.svg";
 import Info from "../../images/info.svg";

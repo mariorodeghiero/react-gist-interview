@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import RenderGist from "react-render-gist";
-import "./Question.scss";
 import Score from "../score/Score";
 import Timer from "../timer/Timer";
 
