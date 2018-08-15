@@ -30,6 +30,9 @@ class Timer extends Component {
     this.setState(prevState => ({
       seconds: prevState.seconds + 1
     }));
+    if (this.state.isRunning) {
+      this.stop();
+    }
   }
 
   start() {
@@ -49,11 +52,7 @@ class Timer extends Component {
   }
 
   componentDidMount() {
-    if (!this.state.isRunning) {
-      this.start();
-    } else {
-      this.stop();
-    }
+    this.start();
   }
 
   render() {

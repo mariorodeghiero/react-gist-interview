@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <button className="btn btn-home">Start</button>
+        <button className="btn shadow btn-light btn-home"> Start </button>
       </div>
     );
   }
