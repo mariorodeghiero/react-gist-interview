@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <button class="btn btn-primary btn-home">Next Step!</button>
+        <button className="btn btn-primary btn-home">Next Step!</button>
       </div>
     );
   }

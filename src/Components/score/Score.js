@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./Score.scss";
 
-import Warning from "../../warning.svg";
-import Info from "../../info.svg";
-import Trophy from "../../trophy.svg";
+import Warning from "../../images/warning.svg";
+import Info from "../../images/info.svg";
+import Trophy from "../../images/trophy.svg";
 
 class Score extends Component {
   state = {};

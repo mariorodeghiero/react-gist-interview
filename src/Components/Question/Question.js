@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import RenderGist from "react-render-gist";
 import "./Question.scss";
 import Score from "../score/Score";
+import Timer from "../timer/Timer";
 
 class Question extends Component {
   constructor(props) {
@@ -102,23 +103,33 @@ class Question extends Component {
   render() {
     if (this.state.finished === true) {
       return (
-        <Score points={this.state.points} number={this.state.numberQuestion} />
+        <div>
+          <Score
+            points={this.state.points}
+            number={this.state.numberQuestion}
+          />
+          <Timer status={this.state.finished} />
+        </div>
       );
     } else {
       return (
-        <div className="card w-75 mx-auto shadow p-3 mb-5 bg-white rounded animated fadeIn slower">
-          <form onSubmit={this.handleClick}>
-            {this.state.questions[this.state.numberQuestion]}
-            <button type="submit" className="btn m-2 shadow-sm rounded">
-              Submit
-            </button>
-            {console.log("-------------------------")}
-            {console.log("Questions size: ", this.state.questions.length)}
-            {console.log("Number of question: ", this.state.numberQuestion)}
-            {console.log("Answer select: ", this.state.selectedOption)}
-            {console.log("Points: ", this.state.points)}
-            {console.log("Answers: ", this.state.correctAnswers)}
-          </form>
+        <div>
+          <Timer status={this.state.finished} />
+
+          <div className="card w-75 mx-auto shadow p-3 mb-5 bg-white rounded animated fadeIn slower">
+            <form onSubmit={this.handleClick}>
+              {this.state.questions[this.state.numberQuestion]}
+              <button type="submit" className="btn m-2 shadow-sm rounded">
+                Submit
+              </button>
+              {console.log("-------------------------")}
+              {console.log("Questions size: ", this.state.questions.length)}
+              {console.log("Number of question: ", this.state.numberQuestion)}
+              {console.log("Answer select: ", this.state.selectedOption)}
+              {console.log("Points: ", this.state.points)}
+              {console.log("Answers: ", this.state.correctAnswers)}
+            </form>
+          </div>
         </div>
       );
     }

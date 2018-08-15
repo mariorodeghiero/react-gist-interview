@@ -1,19 +1,28 @@
 {
-  "posts": [
+  "questions": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "question": "1 - What is the value of foo?",
+      "gistId": "27228a3e81486b3ba7456ea2eead6bf9",
+      "category": "JS",
+      "option": [1020, 20, 30, "\"1020\""],
+      "answer": "\"1020\""
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "question": "2 - What will the following code output?",
+      "gistId": "4ae5a722b0d1486010fc97e2c4e38e46",
+      "category": "JS",
+      "option": [10111, 20222, 303333, "102033333"],
+      "answer": 303333
+    },
+    {
+      "id": 3,
+      "question": "3 - What return the function ReadWord ?",
+      "gistId": "d05c42862f3d3754714784055680c83c",
+      "category": "JS",
+      "option": ["undefined", "Hello World!", "! dlroW olleH", "!dlroWolleH"],
+      "answer": "undefined"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -4,7 +4,6 @@ import "./index.scss";
 import Header from "./Components/header/Header";
 import Footer from "./Components/footer/Footer";
 import Question from "./Components/question/Question";
-import Timer from "./Components/timer/Timer";
 import Home from "./Components/home/Home";
 
 class App extends Component {
@@ -27,7 +26,6 @@ class App extends Component {
         <Header />
         {this.state.status ? (
           <div>
-            <Timer />
             <Question />
           </div>
         ) : (
