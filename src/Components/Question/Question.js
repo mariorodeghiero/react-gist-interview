@@ -12,7 +12,8 @@ class Question extends Component {
       selectedOption: "",
       correctAnswers: [],
       points: 0,
-      finished: false
+      finished: false,
+      btnDisable: true
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -48,7 +49,6 @@ class Question extends Component {
                         className="custom-control-input"
                         value={option}
                         onChange={this.handleOptionChange}
-                        // defaultChecked
                       />
                       <label
                         className="custom-control-label"
@@ -85,7 +85,8 @@ class Question extends Component {
     this.CheckPoints();
     let number = this.state.numberQuestion + 1;
     this.setState({
-      numberQuestion: number
+      numberQuestion: number,
+      btnDisable: true
     });
     if (number >= this.state.questions.length) {
       this.setState({
@@ -96,29 +97,41 @@ class Question extends Component {
   }
 
   handleOptionChange(changeEvent) {
-    this.setState({ selectedOption: changeEvent.target.value });
+    this.setState({
+      selectedOption: changeEvent.target.value,
+      btnDisable: false
+    });
   }
 
   render() {
-    if (this.state.finished === true) {
-      return (
-        <div>
+    // if (this.state.finished === true) {
+    //   return (
+    //     <div>
+    //       <Score
+    //         points={this.state.points}
+    //         number={this.state.numberQuestion}
+    //       />
+    //       <Timer status={this.state.finished} />
+    //     </div>
+    //   );
+    // } else {
+    return (
+      <div>
+        <Timer status={this.state.finished} />
+        {this.state.finished ? (
           <Score
             points={this.state.points}
             number={this.state.numberQuestion}
           />
-          <Timer status={this.state.finished} />
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <Timer status={this.state.finished} />
-
+        ) : (
           <div className="card w-75 mx-auto shadow p-3 mb-5 bg-white rounded animated fadeIn slower">
             <form onSubmit={this.handleClick}>
               {this.state.questions[this.state.numberQuestion]}
-              <button type="submit" className="btn m-2 shadow-sm rounded">
+              <button
+                type="submit"
+                className="btn m-2 shadow-sm rounded"
+                disabled={this.state.btnDisable}
+              >
                 Submit
               </button>
               {console.log("-------------------------")}
@@ -129,9 +142,9 @@ class Question extends Component {
               {console.log("Answers: ", this.state.correctAnswers)}
             </form>
           </div>
-        </div>
-      );
-    }
+        )}>
+      </div>
+    );
   }
 }
 

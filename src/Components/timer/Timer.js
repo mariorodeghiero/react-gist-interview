@@ -7,10 +7,10 @@ class Timer extends Component {
       hours: 0,
       minutes: 0,
       seconds: 0,
-      isRunning: props.status
+      isRunning: this.props.status
     };
 
-    this.start = this.start.bind(this);
+    // this.start = this.start.bind(this);
     this.stop = this.stop.bind(this);
   }
 
@@ -31,13 +31,10 @@ class Timer extends Component {
       seconds: prevState.seconds + 1
     }));
     if (this.state.isRunning) {
-      this.stop();
+      console.log("------------------------------------");
+      console.log("O valor é: ", this.state.isRunning);
+      console.log("------------------------------------");
     }
-  }
-
-  start() {
-    // this.setState({ isRunning: true });
-    this.interval = setInterval(() => this.tick(), 1000);
   }
 
   stop() {
@@ -52,7 +49,8 @@ class Timer extends Component {
   }
 
   componentDidMount() {
-    this.start();
+    // this.setState({ isRunning: true });
+    this.interval = setInterval(() => this.tick(), 1000);
   }
 
   render() {
