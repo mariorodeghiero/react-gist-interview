@@ -1,6 +1,6 @@
 # GitHubGist Interview
 
-React GitHubGist Interview is an application built with ReactJS that renders development issues maintained in a db.json file, where it also contains a Gist-ID to render the code sample of each question and in the end generates an interview dashboard.
+React GitHubGist Interview is an application built with ReactJS that renders development issues maintained in a "db.json" file, where it also contains a Gist-ID to render the code sample of each question and in the end generates an interview dashboard.
 
 ## Screenshot
 
@@ -29,6 +29,12 @@ $ yarn
 **Note**: If you can't use [yarn](https://github.com/yarnpkg/yarn), run `npm install`.
 
 ## Run
+
+First start the file "db.json":
+
+```bash
+$ json-server --watch db.json --port 3001
+```
 
 Start the app in the `dev` environment:
 
