@@ -6,11 +6,9 @@ class Timer extends Component {
     this.state = {
       hours: 0,
       minutes: 0,
-      seconds: 0,
-      isRunning: this.props.status
+      seconds: 0
     };
 
-    // this.start = this.start.bind(this);
     this.stop = this.stop.bind(this);
   }
 
@@ -30,30 +28,18 @@ class Timer extends Component {
     this.setState(prevState => ({
       seconds: prevState.seconds + 1
     }));
-    if (this.state.isRunning) {
-      console.log("------------------------------------");
-      console.log("O valor é: ", this.state.isRunning);
-      console.log("------------------------------------");
-    }
   }
 
   stop() {
-    this.setState(
-      {
-        isRunning: true
-      },
-      () => {
-        clearInterval(this.interval);
-      }
-    );
+    clearInterval(this.interval);
   }
 
   componentDidMount() {
-    // this.setState({ isRunning: true });
     this.interval = setInterval(() => this.tick(), 1000);
   }
 
   render() {
+    this.props.status ? this.stop() : console.log("test");
     return (
       <div className="timer">
         <p className="numbers">

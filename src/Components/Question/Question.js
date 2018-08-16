@@ -13,7 +13,7 @@ class Question extends Component {
       correctAnswers: [],
       points: 0,
       finished: false,
-      btnDisable: true
+      btnDisable: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -104,17 +104,6 @@ class Question extends Component {
   }
 
   render() {
-    // if (this.state.finished === true) {
-    //   return (
-    //     <div>
-    //       <Score
-    //         points={this.state.points}
-    //         number={this.state.numberQuestion}
-    //       />
-    //       <Timer status={this.state.finished} />
-    //     </div>
-    //   );
-    // } else {
     return (
       <div>
         <Timer status={this.state.finished} />
