@@ -13,7 +13,7 @@ class Question extends Component {
       correctAnswers: [],
       points: 0,
       finished: false,
-      btnDisable: false
+      btnDisable: true
     };
 
     this.handleClick = this.handleClick.bind(this);

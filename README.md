@@ -4,12 +4,13 @@ React GitHubGist Interview is an application built with ReactJS that renders dev
 
 ## Screenshot
 
-![Git Commands](./resources/screenShot-1.png)
+![Git Commands](./src/images/example1.gif)
 
 ## Built with
 
 - [ReactJS](https://reactjs.org)
 - [react-render-gist](https://github.com/marjoballabani/react-render-gist#readme)
+- [json-server](https://github.com/typicode/json-server)
 
 ### Install
 
@@ -35,6 +36,8 @@ First start the file "db.json":
 ```bash
 $ json-server --watch db.json --port 3001
 ```
+
+![Db](./src/images/db-json.png)
 
 Start the app in the `dev` environment:
 
