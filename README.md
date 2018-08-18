@@ -37,7 +37,7 @@ First start the file "db.json":
 $ json-server --watch db.json --port 3001
 ```
 
-![Db](./src/images/db-json.png)
+![Db](./src/images/db-json1.png)
 
 Open a new tab in the current directory and start the app in the `dev` environment:
 
