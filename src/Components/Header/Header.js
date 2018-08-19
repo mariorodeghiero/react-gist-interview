@@ -7,7 +7,7 @@ class Header extends Component {
       <div>
         <header className="header ">
           <nav className="navbar navbar-dark bg-white ">
-            <a className="navbar-brand">GitHubGist Interview</a>
+            <a className="navbar-brand">&lt;/&gt; Gist Interview</a>
           </nav>
         </header>
       </div>

@@ -1,26 +1,26 @@
 .card {
-    margin-top: 6%;
-    form {
-        margin: 20px;
-        .btn {
-            margin-top: 30px !important;
-            background-color: #e2e5ec;
-            &:hover {
-                background-color: #ebebeba6;
-            }
-        }
+  max-height: 10% !important;
+  form {
+    margin: 20px;
+    .btn {
+      margin-top: 30px !important;
+      background-color: #e2e5ec;
+      &:hover {
+        background-color: #ebebeba6;
+      }
     }
+  }
 }
 
 .code {
-    border-left: solid 1px rgb(185, 185, 185);
-    margin-top: 40px;
-    padding: 10px;
-    float: right;
-    width: 60%;
-    color: rgb(148, 146, 146);
+  border-left: solid 1px rgb(185, 185, 185);
+  margin-top: 40px;
+  padding: 10px;
+  float: right;
+  width: 60%;
+  color: rgb(148, 146, 146);
 }
 
 .options {
-    padding-top: 60px;
+  padding-top: 60px;
 }

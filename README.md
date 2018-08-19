@@ -1,10 +1,10 @@
-# GitHubGist Interview
+# </> Gist Interview
 
-GitHubGist Interview is an application built with ReactJS and for any person or company to use to simulate programming questions by simply creating and populating the "db.json" file with its Gist-IDs and at the end generating a dashboard.
+</> Gist Interview is an application built with ReactJS and for any person or company to use to simulate programming questions by simply creating and populating the "db.json" file with its Gist-IDs and at the end generating a dashboard.
 
 ## Screenshot
 
-![Git Commands](./src/images/example1.gif)
+![Git Commands](./src/images/example-hd.gif)
 
 ## Built with
 
@@ -17,7 +17,7 @@ GitHubGist Interview is an application built with ReactJS and for any person or 
 First, clone the repo via git:
 
 ```bash
-git clone https://github.com/mariorodeghiero/react-githubgist-interview.git your-project-name
+git clone https://github.com/mariorodeghiero/react-gist-interview.git your-project-name
 ```
 
 And then install dependencies with yarn.
