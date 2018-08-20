@@ -31,7 +31,13 @@ $ yarn
 
 ## Run
 
-First start the file "db.json":
+Install json-server:
+
+```bash
+$ npm install -g json-server
+```
+
+Start the file "db.json":
 
 ```bash
 $ json-server --watch db.json --port 3001
