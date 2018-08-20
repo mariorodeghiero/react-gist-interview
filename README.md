@@ -4,7 +4,7 @@
 
 ## Screenshot
 
-![Git Commands](./src/images/example-hd.gif)
+![Git Commands](https://thepracticaldev.s3.amazonaws.com/i/rayj0viuigg54g4jbgwm.gif)
 
 ## Built with
 
